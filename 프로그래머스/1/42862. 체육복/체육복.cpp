@@ -5,7 +5,7 @@
 using namespace std;
 
 int solution(int n, vector<int> lost, vector<int> reserve) {
-    //set에 집어넣기
+    //set에 집어넣기; 시간복잡도 O(N+M)
     set<int> slost, sreserve;
     for(int i=0;i<reserve.size();i++)
     {
@@ -15,7 +15,7 @@ int solution(int n, vector<int> lost, vector<int> reserve) {
     {
         slost.insert(lost[i]);
     }
-    //중복되는 값 서로 제거
+    //중복되는 값 서로 제거; 시간복잡도 O(N(logN +logM))
     for(int i=0;i<lost.size();i++)
     {
         if(sreserve.find(lost[i]) != sreserve.end())
@@ -26,7 +26,7 @@ int solution(int n, vector<int> lost, vector<int> reserve) {
     }
     //초기 리턴(?)값
     int answer = n - slost.size();
-    //-1 +1 범위 내 요소 찾기
+    //-1 +1 범위 내 요소 찾기; 시간복잡도 O(NlogN)
     for (int r : sreserve)
     {
         if(slost.size() == 0) break;
