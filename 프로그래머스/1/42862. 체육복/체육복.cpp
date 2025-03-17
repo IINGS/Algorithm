@@ -29,6 +29,7 @@ int solution(int n, vector<int> lost, vector<int> reserve) {
     //-1 +1 범위 내 요소 찾기
     for (int r : sreserve)
     {
+        if(slost.size() == 0) break;
         if (slost.find(r-1) != slost.end())
         {
             slost.erase(r-1);
