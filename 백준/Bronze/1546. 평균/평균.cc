@@ -6,11 +6,11 @@ int main()
 {
     int n;
     cin >> n;
-    float big = 0, sum = 0;
+    int big = 0, sum = 0;
     
     for(int i=0; i<n; i++)
     {
-        float x;
+        int x;
         cin >> x;
         sum += x;
         if(x>big)
@@ -19,7 +19,7 @@ int main()
         }
     }
     
-    cout << sum*100/n/big;
+    cout << 1.f*sum*100/n/big;
     
     return 0;
 }
